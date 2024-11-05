@@ -3,7 +3,11 @@ import anime from 'animejs';
 import Image from 'next/image';
 import Logo from '../app/icon-512x512.png';
 
-export function SplashScreen({ handleIsLoaded }: any) {
+interface ISplashScreen {
+  handleIsLoaded: () => void;
+}
+
+export function SplashScreen({ handleIsLoaded }: ISplashScreen) {
   const [isMounted, setIsMounted] = useState(false);
 
   const animate = () => {
